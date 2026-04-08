@@ -1,0 +1,10 @@
+name: Return metadata for issues event
+on: issues
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v6
+      - name: Output Github issues context
+        run: echo " ${{ toJSON(github.event) }}
